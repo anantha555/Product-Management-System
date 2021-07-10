@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* global css */
+
+.continer {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* model section */
+
+.modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    display: none;
+}
+
+.single-product {
+    background-color: #e4e4e4;
+    width: 700px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25), 0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+.single-pro-img {
+    width: 45%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-pro-img>img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.single-pro-details {
+    width: 70%;
+    background: rgb(243, 232, 232);
+}
+
+.single-pro-details h1,
+h2,
+h3,
+p {
+    margin-bottom: 10px;
+}
+
+.rate {
+    position: relative;
+    height: 20px;
+    width: 94px;
+    margin-bottom: 0px;
+}
+
+.rate-bar {
+    position: absolute;
+    height: 20px;
+    display: flex;
+    gap: 1px;
+}
+
+.grey-star-rate {
+    color: rgb(180, 173, 173);
+}
+
+.gold-star-rate {
+    width: 0px;
+    color: gold;
+    overflow: hidden;
+}
+
+.user-rating {
+    margin-top: 5px;
+    height: 20px;
+    display: flex;
+    gap: 1px;
+    width: 94px;
+    color: rgb(180, 173, 173);
+}
+
+.side_img {
+    width: 100%;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.side-img-item {
+    margin-right: 10px;
+    max-height: 100px;
+    max-width: 80px;
+    border-radius: 5px;
+}
+
+
+/* model section end */
+
+
+/* header section css */
+
+.header {
+    height: 60px;
+    width: 100%;
+    background-color: lightsalmon;
+    opacity: 0.95;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo div h2 {
+    font-size: 3rem;
+    line-height: 60px;
+    font-weight: bold;
+    text-decoration-style: dotted;
+    text-decoration-color: lightskyblue;
+}
+
+.logo div {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-s {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(211, 129, 48);
+    cursor: pointer;
+}
+
+.btn-s a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* header section end */
+
+
+/* filter section css */
+
+.left-panel {
+    height: 100vh;
+    width: 20%;
+    background-color: #efdbdb;
+    position: fixed;
+    box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25);
+    margin-left: -20%;
+    transition: 0.5s;
+    top: 0;
+    z-index: 25;
+}
+
+@media (max-width: 940px) {
+    .left-panel {
+        width: 40%;
+    }
+}
+
+.continer2 {
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filterItem {
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.line::before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    margin-top: 5px;
+    display: block;
+    background: rgba(151, 151, 158, 0.315);
+}
+
+.filterItem input,
+select {
+    padding: 5px 10px;
+    border: 1px solid lightgray;
+    outline: none;
+    border-radius: 5px;
+}
+
+#price-min,
+#price-max {
+    width: 40%;
+}
+
+.filterItem input:focus,
+select:focus,
+button:focus {
+    box-shadow: 0 0 2px rgb(255, 144, 100);
+}
+
+.btn-star {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-weight: bolder;
+    background-color: #84848463;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.category {
+    border-radius: 5px;
+    padding: 5px;
+    width: 35%;
+    background-color: #b9c4be63;
+}
+
+.smartphone {
+    background-color: #f4433633;
+}
+
+.earphones {
+    background-color: #2195f341;
+}
+
+.headphones {
+    background-color: #21f37986;
+}
+
+.btn-star i {
+    color: gold;
+}
+
+
+/* filter section end */
+
+
+/* main products section */
+
+.products {
+    margin-top: 100px;
+    padding: 50px 50px;
+    background-color: rgba(255, 255, 224, 0.192);
+}
+
+.products>.continer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    max-width: 350px;
+    margin-top: 20px;
+    box-shadow: 0 0 2px gray;
+    border-radius: 10px;
+    box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25), 0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+.product-img {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.product-img>img {
+    width: 100%;
+}
+
+.product-details {
+    padding: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    margin-bottom: 10px;
+}
+
+.title-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.rating>div {
+    height: 20px;
+}
+
+.rating {
+    position: relative;
+    width: 94px;
+    height: 20px;
+}
+
+.gray-star,
+.golden-star {
+    display: flex;
+    gap: 1px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.gray-star {
+    color: lightgray;
+    position: absolute;
+}
+
+.golden-star {
+    position: absolute;
+    color: gold;
+    white-space: nowrap;
+}
+
+.product-price {
+    color: black;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(255, 144, 100);
+    cursor: pointer;
+}
+
+.btn+.btn {
+    margin-left: 15px;
+}
+
+.btn:hover {
+    background-color: lightsalmon;
+}
+
+.removebtn {
+    background-color: rgba(136, 127, 123, 0.479);
+}
+
+.removebtn:hover {
+    background-color: rgba(136, 127, 123, 0.74);
+    ;
+}
+
+
+/* main products section end */

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/admin.css">
+    <title>Admin Panel</title>
+</head>
+
+<body>
+
+    <!-- ADD modal start-->
+    <div id='modal' class="modal close" onclick="toggleModal(event,false)">
+        <div class="form-continer">
+            <h2>Add Product</h2>
+
+            <form id='add_form'>
+                <div class="input-continer">
+                    <input type="text" placeholder="Product Name" id='add_name'>
+                    <input type="text" placeholder="Category" id='add_category'>
+                </div>
+
+                <div class="input-continer">
+                    <input type="text" placeholder="Price" id='add_price'>
+                </div>
+                <div class="input-continer">
+                    Select Color: <input class='color-input' type="color" placeholder="Color" id='add_color'>
+                </div>
+                <div class="input-continer">
+                    <input class='url-input' type="text" placeholder="Image Url" id='add_img_url'>
+                </div>
+                <div class="input-continer">
+                    <input class='url-input' type="text" placeholder="Side Image Urls (comma separted)" id='add_side_img_url'>
+                </div>
+                <div class="input-continer">
+                    <button class='btn-s updateColor' type='button' onclick='addProduct()'>Add</button>
+                    <button class='btn-s updateColor close' type='button' onclick="toggleModal(event,false)">Close</button>
+                </div>
+                <!-- type = button  make sures the button in from doesn't behave like submit button by default -->
+            </form>
+        </div>
+    </div>
+    <!-- ADD modal end-->
+
+    <!-- update modal start -->
+    <div id='update_modal' class="modal close" onclick="toggleUpdateModal(event,false)">
+        <div class="form-continer">
+            <h2>Update Product</h2>
+            <form id='add_form'>
+                <div class="input-continer">
+                    <input type="text" placeholder="Product Name" id='update_name'>
+                    <input type="text" placeholder="Category" id='update_category'>
+                </div>
+
+                <div class="input-continer">
+                    <input type="text" placeholder="Price" id='update_price'>
+                </div>
+                <div class="input-continer">
+                    Select Color: <input class='color-input' type="color" placeholder="Color" id='update_color'>
+                </div>
+                <div class="input-continer">
+                    <input class='url-input' type="text" placeholder="Image Url" id='update_img_url'>
+                </div>
+                <div class="input-continer">
+                    <input class='url-input' type="text" placeholder="Side Image Urls (comma separted)" id='update_side_img_url'>
+                </div>
+                <div class="input-continer">
+                    <button class='btn-s updateColor' type='button' onclick='updateProduct()'>Update</button>
+                    <button class='btn-s updateColor close' type='button' onclick="toggleUpdateModal(event,false)">Close</button>
+                </div>
+                <!-- type = button  make sures the button in from doesnt behave like submit button by default -->
+            </form>
+        </div>
+    </div>
+    <!-- update modal end -->
+
+    <!-- table display start -->
+    <div class="continer col">
+
+        <div class="header row">
+            <h1 class="header-title">Product Management System</h1>
+            <button class='btn primary' onclick="toggleModal(event,true)">Add</button>
+        </div>
+
+        <div class="main">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Color</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id='tbody'>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- table display end -->
+
+    <script src="./js/admin.js"></script>
+</body>
+
+</html>

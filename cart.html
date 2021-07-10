@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" integrity="sha512-jQqzj2vHVxA/yCojT8pVZjKGOe9UmoYvnOuM/2sQ110vxiajBU+4WkyRs1ODMmd4AfntwUEV4J+VfM6DkfjLRg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/cart.css">
+    <title>Cart</title>
+</head>
+
+<body>
+    <!-- Page header start -->
+
+    <div class="header">
+        <div class="continer">
+
+            <div class="logo">
+                <div>
+
+                </div>
+
+                <div>
+                    <h2>ShopKart</h2>
+                </div>
+                <div>
+                    <button class="btn-s">
+                        <a href="user.html" target="">Back</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Page header end -->
+
+    <!-- main products display section start -->
+
+    <div class="cart-products">
+        <div id='cart_continer' class="continer2">
+            <h2>Shopping Cart (<span id='noOfitems'>0</span> items)</h2>
+            <span class="line2" style="width: 100%;"></span>
+
+            <div class="cart_section">
+                <div id='cartItems' class="cart_items">
+                </div>
+                <div class="cart_total ">
+                    <h2>Total Summery</h2>
+                    <span class="line "></span>
+                    <ol id='itemsList'>
+                        <li>item 1</li>
+                    </ol>
+                    <span class="line "></span>
+                    <p id='totalPrice'>Subtotal (0 items): $ <strong>0</strong></p>
+                    <br>
+                    <div>
+                        <button class="btn-l">Proceed to Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main products display section end -->
+
+    <script src='./js/cart.js'></script>
+</body>
+
+</html>

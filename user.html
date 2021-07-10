@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" integrity="sha512-jQqzj2vHVxA/yCojT8pVZjKGOe9UmoYvnOuM/2sQ110vxiajBU+4WkyRs1ODMmd4AfntwUEV4J+VfM6DkfjLRg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/user.css">
+    <title>ShopKart</title>
+</head>
+
+<body>
+    <!-- filters section start -->
+    <div id='leftpanel' class="left-panel">
+
+        <div class='continer2'>
+            <h1>Apply Filters</h1>
+            <span class="line" style='margin-bottom: 20px;'></span>
+            <form id='fillter_form'>
+                <div class='filterItem'>
+                    <h3>Name Filter</h3>
+                    <input type="text" onkeyup="setFilter('nameFilter',this.value)">
+                </div>
+                <span class="line"></span>
+
+                <div class="filterItem">
+                    <h3>Category Filter</h3>
+                    <select id='role' onchange="setFilter('categoryFilter',this.value)">
+                         <option value="">Select Category</option>
+                    </select>
+                </div>
+                <span class="line"></span>
+
+                <div class='filterItem'>
+                    <h3>Price Filter</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <label>Min</label>
+                        <label>Max</label>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <input id='price-min' type="number" onkeyup="setFilter('minPriceFilter',this.value)">
+                        <strong>to</strong>
+                        <input id='price-max' type="number" onkeyup="setFilter('maxPriceFilter',this.value)">
+                    </div>
+                </div>
+                <span class="line"></span>
+
+                <div class='filterItem'>
+                    <h3>Rating Filter</h3>
+                    <p>Select the Min rating</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <button id='star1' class='btn-star' type='button' onclick="setFilter('ratingFilter',1)">1 <i class="fas fa-star"></i></button>
+                        <button id='star2' class='btn-star' type='button' onclick="setFilter('ratingFilter',2)">2 <i class="fas fa-star"></i></button>
+                        <button id='star3' class='btn-star' type='button' onclick="setFilter('ratingFilter',3)">3 <i class="fas fa-star"></i></button>
+                        <button id='star4' class='btn-star' type='button' onclick="setFilter('ratingFilter',4)">4 <i class="fas fa-star"></i></button>
+                        <button id='star5' class='btn-star' type='button' onclick="setFilter('ratingFilter',5)">5 <i class="fas fa-star"></i></button>
+                    </div>
+                </div>
+                <span class="line"></span>
+
+                <div style="display: flex; justify-content: space-around;">
+                    <button class='btn' type='button' onclick="clearFields()">Clear</button>
+                    <button class='btn' type='button' onclick="toggleFilterPanel(false)">Done</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- filters section end -->
+
+    <!-- single model view section start -->
+
+    <div id='modal' class="modal" onclick="closeProductPage(event,false)">
+        <div class="single-product">
+            <div class="single-pro-img">
+                <img id='single-pro-img' src="https://images.pexels.com/photos/4792354/pexels-photo-4792354.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+            </div>
+
+            <div class="single-pro-details">
+                <div style="padding: 20px;">
+                    <h1 id='single-pro-name'>Smasung S21</h1>
+                    <h2 id='single-pro-price'>₹ 50,000</h2>
+                    <div class="rate">
+                        <div class="grey-star-rate rate-bar">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div id='single-pro-rate' class="gold-star-rate rate-bar">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p id='num-of-rating'>(22)</p>
+                    <h3 id='single-pro-category'>Smartphone</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor. </p>
+                    <h4>Rate the Product</h4>
+
+                    <div class="user-rating">
+                        <i class="fas fa-star user-rate" onmouseover="selectRating(1)" onclick='rateProduct(1)' onmouseout='clearRating()'></i>
+                        <i class="fas fa-star user-rate" onmouseover="selectRating(2)" onclick='rateProduct(2)' onmouseout='clearRating()'></i>
+                        <i class="fas fa-star user-rate" onmouseover="selectRating(3)" onclick='rateProduct(3)' onmouseout='clearRating()'></i>
+                        <i class="fas fa-star user-rate" onmouseover="selectRating(4)" onclick='rateProduct(4)' onmouseout='clearRating()'></i>
+                        <i class="fas fa-star user-rate" onmouseover="selectRating(5)" onclick='rateProduct(5)' onmouseout='clearRating()'></i>
+                    </div>
+
+                    <div class="side_img" id="sideimg">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- single model view section end -->
+
+    <!-- Page header start -->
+
+    <div class="header">
+        <div class="continer">
+
+            <div class="logo">
+                <div>
+                </div>
+
+                <div>
+                    <h2>ShopKart</h2>
+                </div>
+
+                <div>
+                    <button id='filterCount' class="btn-s" onclick="toggleFilterPanel(true)">Filter</button>
+
+                    <button class="btn-s">
+                        <a id='cartCount' href="cart.html" target="">CART</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Page header end -->
+
+    <!-- main products display section start -->
+
+    <div class="products">
+        <div style="display: flex; justify-content: flex-end; align-items: center; margin-right: 100px; text-align: end;">
+            <div style="width: 300px; text-align: right;">
+                <h3 class="continer">Showing <span id='itemsOnScreen'></span></h3>
+            </div>
+            <div>
+                <button class='btn' type='button' onclick="clearFields()" style="margin-top:0;">Show All</button>
+            </div>
+        </div>
+        <span class="line"></span>
+        <div id='product_continer' class="continer">
+
+        </div>
+    </div>
+    <!-- main products display section end -->
+
+    <script src='./js/user.js'></script>
+</body>
+
+</html>
